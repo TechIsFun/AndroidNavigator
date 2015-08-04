@@ -1,0 +1,37 @@
+<resources>
+
+    <!-- Base application theme. -->
+    <style name="AppTheme" parent="Theme.AppCompat.Light.NoActionBar">
+        <item name="colorPrimary">@color/primary</item>
+        <item name="colorPrimaryDark">@color/primary_dark</item>
+        <item name="colorAccent">@color/accent</item>
+
+        <item name="android:windowNoTitle">true</item>
+        <item name="windowActionBar">false</item>
+    </style>
+
+    <style name="HeaderBar">
+        <item name="android:background">@color/primary</item>
+    </style>
+
+    <style name="ActionBar.TitleText.Base" parent="android:TextAppearance.Holo.Widget.ActionBar.Title">
+        <item name="android:textColor">@color/icons</item>
+    </style>
+
+    <style name="ActionBar.TitleText" parent="ActionBar.TitleText.Base"></style>
+
+    <style name="ActionBar.SubtitleText.Base" parent="android:TextAppearance.Holo.Widget.ActionBar.Subtitle">
+        <item name="android:textColor">@color/icons</item>
+    </style>
+
+    <style name="ActionBar.SubtitleText" parent="ActionBar.SubtitleText.Base"></style>
+
+
+    <style name="ActionBarThemeOverlay" parent="">
+        <item name="android:textColorPrimary">@color/primary_text</item>
+        <item name="android:textColorSecondary">@color/secondary_text</item>
+        <item name="colorControlNormal">#fff</item>
+        <item name="colorControlHighlight">#3fff</item>
+    </style>
+
+</resources>
