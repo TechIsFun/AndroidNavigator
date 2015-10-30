@@ -1,38 +1,37 @@
-package com.andreamaglie.android.navigation;
+package com.github.techisfun.android.navigator;
 
 
 import android.app.Activity;
-import android.app.Dialog;
-import android.app.DialogFragment;
+import android.app.Fragment;
 import android.os.Bundle;
 import android.support.annotation.Nullable;
 import android.view.LayoutInflater;
+import android.view.Menu;
+import android.view.MenuInflater;
+import android.view.MenuItem;
 import android.view.View;
 import android.view.ViewGroup;
-import android.view.Window;
 
 import butterknife.ButterKnife;
 
 
-public class NavigatorDialogFragment extends DialogFragment {
+public class NavigatorFragment extends Fragment {
 
-    private static final String TAG = NavigatorDialogFragment.class.getSimpleName();
+    private static final String TAG = NavigatorFragment.class.getSimpleName();
 
     private Screen mScreen;
     private Navigator mNavigator;
 
     @Override
-    public void onAttach(Activity activity) {
-        super.onAttach(activity);
-        mNavigator = Navigator.getInstanceFor(activity);
+    public void onCreate(Bundle savedInstanceState) {
+        super.onCreate(savedInstanceState);
+        setHasOptionsMenu(true);
     }
 
     @Override
-    public Dialog onCreateDialog(Bundle savedInstanceState) {
-        Dialog dialog = super.onCreateDialog(savedInstanceState);
-        dialog.getWindow().requestFeature(Window.FEATURE_NO_TITLE);
-        dialog.setCanceledOnTouchOutside(false);
-        return dialog;
+    public void onAttach(Activity activity) {
+        super.onAttach(activity);
+        mNavigator = Navigator.getInstanceFor(activity);
     }
 
 
@@ -43,7 +42,7 @@ public class NavigatorDialogFragment extends DialogFragment {
             throw new IllegalStateException("mNavigator is null!");
         }
 
-        mScreen = mNavigator.getCurrentDialogScreen();
+        mScreen = mNavigator.getCurrentScreen();
 
         if (mScreen == null) {
             throw new IllegalStateException("mScreen is null!");
@@ -77,6 +76,27 @@ public class NavigatorDialogFragment extends DialogFragment {
     public void onDestroyView() {
         super.onDestroyView();
         ButterKnife.reset(mScreen);
+        mScreen.onDestroyView();
     }
 
+    @Override
+    public void onCreateOptionsMenu(Menu menu, MenuInflater inflater) {
+        mScreen.onCreateOptionsMenu(menu, inflater);
+    }
+
+    @Override
+    public boolean onOptionsItemSelected(MenuItem item) {
+        return mScreen.onOptionsItemSelected(item);
+    }
+
+    /*
+    @Override
+    public Transition getEnterTransition() {
+        if (Build.VERSION.SDK_INT >= Build.VERSION_CODES.LOLLIPOP) {
+            return new Slide();
+        } else {
+            return null;
+        }
+    }
+    */
 }

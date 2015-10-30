@@ -1,4 +1,4 @@
-package com.andreamaglie.android.app;
+package com.github.techisfun.android.app;
 
 import android.app.Application;
 import android.test.ApplicationTestCase;

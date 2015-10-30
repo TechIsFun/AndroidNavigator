@@ -1,10 +1,9 @@
-package com.andreamaglie.android.navigation.app;
+package com.example.android.navigator;
 
 import android.view.View;
 import android.widget.TextView;
 
-import com.andreamaglie.android.navigation.R;
-import com.andreamaglie.android.navigation.Screen;
+import com.github.techisfun.android.navigator.Screen;
 
 import butterknife.InjectView;
 

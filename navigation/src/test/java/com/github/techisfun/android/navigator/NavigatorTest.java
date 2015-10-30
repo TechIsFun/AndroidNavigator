@@ -1,4 +1,4 @@
-package com.andreamaglie.android.navigation;
+package com.github.techisfun.android.navigator;
 
 import android.app.Activity;
 import android.app.Fragment;

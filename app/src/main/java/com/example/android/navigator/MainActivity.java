@@ -1,10 +1,9 @@
-package com.andreamaglie.android.navigation.app;
+package com.example.android.navigator;
 
 import android.os.Bundle;
 import android.support.v7.app.AppCompatActivity;
 
-import com.andreamaglie.android.navigation.Navigator;
-import com.andreamaglie.android.navigation.R;
+import com.github.techisfun.android.navigator.Navigator;
 
 
 public class MainActivity extends AppCompatActivity {
