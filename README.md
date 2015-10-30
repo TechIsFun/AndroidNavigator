@@ -5,8 +5,8 @@
 
 Use POJOs instead of Activities and/or Fragments to handle the different _screens_ of an app!
 
-* Pojo will survive across configuration changes
-* Useful for fast app prototyping
+* Pojo will survive across configuration changes.
+* Useful for fast app prototyping.
 * AndroidNavigation users [ButterKnife](https://github.com/JakeWharton/butterknife) for injecting views.
 
 ## 2 Steps Usage
