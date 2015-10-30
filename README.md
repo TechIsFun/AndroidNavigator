@@ -10,7 +10,7 @@ Use POJOs instead of Activities and/or Fragments to handle the different _screen
 * Useful for fast app prototyping
 * AndroidNavigation users [ButterKnife](https://github.com/JakeWharton/butterknife) for injecting views.
 
-2 steps usage example
+2 Steps Usage
 ======================
 
 Create an instance of Screen:
@@ -59,7 +59,8 @@ public class FirstScreen extends Screen {
 }
 ```
 
-Create an Activity with an instance on Navigator:
+
+Create an Activity with an instance of Navigator:
 
 ```java
 public class MainActivity extends AppCompatActivity {
