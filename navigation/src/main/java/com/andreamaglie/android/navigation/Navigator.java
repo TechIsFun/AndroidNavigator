@@ -31,7 +31,6 @@ public class Navigator {
     private Application mApplication;
     private DialogTransactionController dialogTxController = new DialogTransactionController();
     private NavigatorFragment mCurrentFragment;
-//    private NavigatorDataFragment mDataFragment;
 
     public static Navigator getInstanceFor(@NonNull Activity activity) {
         FragmentManager fragmentManager = activity.getFragmentManager();
@@ -82,8 +81,8 @@ public class Navigator {
     }
     */
 
-    /*
-    * Ecco perche' uso la ActionBar: http://stackoverflow.com/questions/26486730/in-android-app-toolbar-settitle-method-has-no-effect-application-name-is-shown
+    /**
+     * http://stackoverflow.com/questions/26486730/in-android-app-toolbar-settitle-method-has-no-effect-application-name-is-shown
     */
     public void setActionBar(ActionBar actionBar) {
         mActionBar = actionBar;
