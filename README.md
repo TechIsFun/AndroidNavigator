@@ -1,8 +1,7 @@
 
 [![Build Status](https://travis-ci.org/TechIsFun/AndroidNavigation.svg?branch=master)](https://travis-ci.org/TechIsFun/AndroidNavigation)
 
-AndroidNavigation
-=================
+# AndroidNavigation
 
 Use POJOs instead of Activities and/or Fragments to handle the different _screens_ of an app!
 
@@ -10,8 +9,7 @@ Use POJOs instead of Activities and/or Fragments to handle the different _screen
 * Useful for fast app prototyping
 * AndroidNavigation users [ButterKnife](https://github.com/JakeWharton/butterknife) for injecting views.
 
-2 Steps Usage
-======================
+## 2 Steps Usage
 
 Create an instance of Screen:
 
