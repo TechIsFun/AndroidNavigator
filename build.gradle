@@ -26,7 +26,7 @@ ext {
 
     // Android
     supportannotations = 'com.android.support:support-annotations:22.2.0'
-    appcompat = 'com.android.support:appcompat-v7:22.0.0'
+    appcompat = 'com.android.support:appcompat-v7:22.2.1'
     butterknife = 'com.jakewharton:butterknife:6.1.0'
 
     // Testing
