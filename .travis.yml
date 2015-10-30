@@ -3,7 +3,7 @@ language: android
 android:
   components:
     - build-tools-23.0.1
-    - android-23
+    - android-22
     - extra-android-m2repository
   licenses:
     - 'android-sdk-preview-license-52d11cd2'
