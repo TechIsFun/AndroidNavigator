@@ -2,13 +2,11 @@ language: android
 
 android:
   components:
-    - platform-tools
-    - tools
     - build-tools-23.0.1
-    - android-22
+    - android-23
     - extra-android-m2repository
   licenses:
-    - 'android-sdk-preview-license-52d11cd2'
+    - android-sdk-license-5be876d5
 
 jdk:
   - oraclejdk7
@@ -16,9 +14,6 @@ jdk:
 script:
   ./gradlew assembleDebug testDebug assembleRelease
 
-before_cache:
-  - rm -f $HOME/.gradle/caches/modules-2/modules-2.lock
 cache:
   directories:
-    - $HOME/.gradle/caches/
-    - $HOME/.gradle/wrapper/
+    - $HOME/.m2
