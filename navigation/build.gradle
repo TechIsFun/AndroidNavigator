@@ -1,12 +1,12 @@
 apply plugin: 'com.android.library'
 
 android {
-    compileSdkVersion 21
-    buildToolsVersion "21.1.2"
+    compileSdkVersion rootProject.ext.compileSdkVersion
+    buildToolsVersion rootProject.ext.buildToolsVersion
 
     defaultConfig {
-        minSdkVersion 14
-        targetSdkVersion 22
+        minSdkVersion rootProject.ext.minSdkVersion
+        targetSdkVersion rootProject.ext.targetSdkVersion
         versionCode 1
         versionName "0.1"
 
@@ -30,11 +30,14 @@ android {
 }
 
 dependencies {
-    compile 'com.android.support:appcompat-v7:22.0.0'
-    compile 'com.jakewharton:butterknife:6.1.0'
-    androidTestCompile 'org.mockito:mockito-core:1.9.5'
+    compile rootProject.ext.supportannotations
+    compile rootProject.ext.appcompat
+    compile rootProject.ext.butterknife
+    androidTestCompile rootProject.ext.mockito
     androidTestCompile 'com.google.dexmaker:dexmaker:1.2'
     androidTestCompile 'com.google.dexmaker:dexmaker-mockito:1.2'
-    testCompile 'junit:junit:4.12'
-    testCompile 'org.mockito:mockito-core:1.9.5'
+    testCompile rootProject.ext.junit
+    testCompile rootProject.ext.mockito
+
+
 }

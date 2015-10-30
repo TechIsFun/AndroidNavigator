@@ -1,16 +1,12 @@
-package com.texa.care.navigation;
+package com.andreamaglie.android.navigation;
 
 import android.app.DialogFragment;
 import android.app.Fragment;
 import android.app.FragmentManager;
 import android.support.annotation.NonNull;
 
-/**
- * Created by amaglie on 3/26/15.
- */
 public class DialogTransactionController {
 
-    private static final String TAG = DialogTransactionController.class.getSimpleName();
     private Screen mCurrentDialogScreen;
 
     public void display(@NonNull Screen screen, @NonNull FragmentManager fm) {

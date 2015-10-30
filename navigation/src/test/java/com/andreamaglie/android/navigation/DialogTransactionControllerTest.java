@@ -1,4 +1,4 @@
-package com.texa.care.navigation;
+package com.andreamaglie.android.navigation;
 
 import android.app.DialogFragment;
 import android.app.Fragment;

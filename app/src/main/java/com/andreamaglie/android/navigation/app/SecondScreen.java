@@ -4,7 +4,7 @@ import android.view.View;
 import android.widget.TextView;
 
 import com.andreamaglie.android.navigation.R;
-import com.texa.care.navigation.Screen;
+import com.andreamaglie.android.navigation.Screen;
 
 import butterknife.InjectView;
 

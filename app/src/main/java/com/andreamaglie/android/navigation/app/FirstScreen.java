@@ -4,7 +4,7 @@ import android.view.View;
 import android.widget.TextView;
 
 import com.andreamaglie.android.navigation.R;
-import com.texa.care.navigation.Screen;
+import com.andreamaglie.android.navigation.Screen;
 
 import butterknife.InjectView;
 import butterknife.OnClick;
@@ -16,14 +16,16 @@ public class FirstScreen extends Screen {
 
     private static final String TAG = FirstScreen.class.getSimpleName();
 
+    /*
+     * View injection with ButterKnife.
+     * Injected views will be automatically removed and re-injected on configuration changes
+     */
     @InjectView(R.id.text1)
     protected TextView mTextView1;
-
     @InjectView(R.id.text2)
     protected TextView mTextView2;
 
     protected int mCounter;
-
     private String mSampleString = "a sample string";
 
     @Override
@@ -37,17 +39,19 @@ public class FirstScreen extends Screen {
 
     @Override
     public int getLayoutId() {
+        // the layout resource for this screen
         return R.layout.first_screen_layout;
     }
 
     @Override
     public String getId() {
-        // return and indentifier for this screen
+        // return and identifier for this screen
         return TAG;
     }
 
     @OnClick(R.id.btn_go_to_second_screen)
     public void onButtonClicked(View v) {
+        // go to another screen
         getNavigator().goTo(new SecondScreen());
     }
 }

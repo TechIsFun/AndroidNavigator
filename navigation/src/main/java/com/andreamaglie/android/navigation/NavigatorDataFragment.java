@@ -1,9 +1,7 @@
-package com.texa.care.navigation;
+package com.andreamaglie.android.navigation;
 
 import android.app.Fragment;
 import android.os.Bundle;
-
-import com.andreamaglie.android.app.Navigator;
 
 public final class NavigatorDataFragment extends Fragment {
 

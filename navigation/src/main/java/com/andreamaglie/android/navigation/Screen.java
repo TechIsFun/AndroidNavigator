@@ -1,4 +1,4 @@
-package com.texa.care.navigation;
+package com.andreamaglie.android.navigation;
 
 import android.app.FragmentTransaction;
 import android.content.Context;
@@ -7,11 +7,6 @@ import android.view.MenuInflater;
 import android.view.MenuItem;
 import android.view.View;
 
-import com.andreamaglie.android.app.Navigator;
-
-/**
- * Created by amaglie on 3/20/15.
- */
 public abstract class Screen {
 
     private static final String TAG = Screen.class.getSimpleName();

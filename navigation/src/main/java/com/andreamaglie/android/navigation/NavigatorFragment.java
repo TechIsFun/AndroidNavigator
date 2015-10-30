@@ -1,4 +1,5 @@
-package com.texa.care.navigation;
+package com.andreamaglie.android.navigation;
+
 
 import android.app.Activity;
 import android.app.Fragment;
@@ -10,8 +11,6 @@ import android.view.MenuInflater;
 import android.view.MenuItem;
 import android.view.View;
 import android.view.ViewGroup;
-
-import com.andreamaglie.android.app.Navigator;
 
 import butterknife.ButterKnife;
 

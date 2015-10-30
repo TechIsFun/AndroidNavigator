@@ -1,12 +1,10 @@
-package com.texa.care.navigation;
+package com.andreamaglie.android.navigation;
 
 import android.app.Activity;
 import android.app.Fragment;
 import android.app.FragmentManager;
 import android.app.FragmentTransaction;
 import android.support.v7.app.ActionBar;
-
-import com.andreamaglie.android.app.Navigator;
 
 import org.junit.Before;
 import org.junit.Test;

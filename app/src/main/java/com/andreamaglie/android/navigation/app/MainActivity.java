@@ -1,10 +1,9 @@
 package com.andreamaglie.android.navigation.app;
 
 import android.os.Bundle;
-import android.support.v7.app.ActionBarActivity;
 import android.support.v7.app.AppCompatActivity;
 
-import com.andreamaglie.android.app.Navigator;
+import com.andreamaglie.android.navigation.Navigator;
 import com.andreamaglie.android.navigation.R;
 
 

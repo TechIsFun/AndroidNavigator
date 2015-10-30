@@ -1,4 +1,4 @@
-package com.andreamaglie.android.app;
+package com.andreamaglie.android.navigation;
 
 import android.app.Activity;
 import android.app.Application;
@@ -8,14 +8,10 @@ import android.app.FragmentTransaction;
 import android.content.Context;
 import android.support.annotation.IdRes;
 import android.support.annotation.NonNull;
+import android.support.annotation.Nullable;
+import android.support.annotation.VisibleForTesting;
 import android.support.v7.app.ActionBar;
 import android.util.Log;
-
-import com.texa.care.navigation.DialogTransactionController;
-import com.texa.care.navigation.NavigatorDataFragment;
-import com.texa.care.navigation.NavigatorFragment;
-import com.texa.care.navigation.Screen;
-import com.texa.care.navigation.ScreenType;
 
 import java.util.Stack;
 
@@ -24,13 +20,19 @@ public class Navigator {
     private static final String TAG = Navigator.class.getSimpleName();
     private int mContainerResId;
     private FragmentManager mFragmentManager;
+    @Nullable
     private ActionBar mActionBar;
 
     private Stack<Screen> mScreens = new Stack<>();
 
     private Application mApplication;
-    private DialogTransactionController dialogTxController = new DialogTransactionController();
+    private DialogTransactionController mDialogTransactionController = new DialogTransactionController();
     private NavigatorFragment mCurrentFragment;
+
+    @VisibleForTesting
+    protected Navigator() {
+        // do nothing
+    }
 
     public static Navigator getInstanceFor(@NonNull Activity activity) {
         FragmentManager fragmentManager = activity.getFragmentManager();
@@ -55,32 +57,6 @@ public class Navigator {
         return navigator;
     }
 
-
-
-    /*
-
-    public void onCreate(Activity activity) {
-        mFragmentManager = activity.getFragmentManager();
-
-        mDataFragment = (NavigatorDataFragment) mFragmentManager.findFragmentByTag(NavigatorDataFragment.TAG);
-        if (mDataFragment == null) {
-            mDataFragment = new NavigatorDataFragment();
-            mFragmentManager.beginTransaction().add(mDataFragment, NavigatorDataFragment.TAG).commit();
-        }
-    }
-    */
-
-    /*
-
-    public void onDestroy(NavigationActivity navigationActivity) {
-        FragmentManager fragmentManager = navigationActivity.getFragmentManager();
-        NavigatorDataFragment dataFragment = (NavigatorDataFragment) fragmentManager.findFragmentByTag(NavigatorDataFragment.TAG);
-        if (dataFragment != null) {
-            fragmentManager.beginTransaction().remove(dataFragment).commit();
-        }
-    }
-    */
-
     /**
      * http://stackoverflow.com/questions/26486730/in-android-app-toolbar-settitle-method-has-no-effect-application-name-is-shown
     */
@@ -88,14 +64,12 @@ public class Navigator {
         mActionBar = actionBar;
     }
 
-
     public void goTo(Screen screen) {
         goTo(screen, screen.getTransaction());
     }
 
-
     public boolean goBack() {
-        if (dialogTxController.goBack(mFragmentManager)) {
+        if (mDialogTransactionController.goBack(mFragmentManager)) {
             return true;
         }
 
@@ -172,7 +146,7 @@ public class Navigator {
         screen.setNavigator(this);
 
         if (screen.getType() == ScreenType.DIALOG) {
-            dialogTxController.display(screen, mFragmentManager);
+            mDialogTransactionController.display(screen, mFragmentManager);
             return;
         }
 
@@ -263,7 +237,7 @@ public class Navigator {
     }
 
     public Screen getCurrentDialogScreen() {
-        return dialogTxController.getCurrentDialogScreen();
+        return mDialogTransactionController.getCurrentDialogScreen();
     }
 
     /**
