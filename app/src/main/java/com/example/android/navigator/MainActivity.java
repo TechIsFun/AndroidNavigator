@@ -3,6 +3,7 @@ package com.example.android.navigator;
 import android.os.Bundle;
 import android.support.v7.app.AppCompatActivity;
 
+import com.example.android.navigator.screens.FirstScreen;
 import com.github.techisfun.android.navigator.Navigator;
 
 

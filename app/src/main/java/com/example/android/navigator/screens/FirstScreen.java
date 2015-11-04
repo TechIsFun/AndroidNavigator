@@ -1,8 +1,9 @@
-package com.example.android.navigator;
+package com.example.android.navigator.screens;
 
 import android.view.View;
 import android.widget.TextView;
 
+import com.example.android.navigator.R;
 import com.github.techisfun.android.navigator.Screen;
 
 import butterknife.InjectView;
