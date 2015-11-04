@@ -35,7 +35,7 @@ public class SecondScreen extends Screen {
 
     @Override
     public int getLayoutId() {
-        return R.layout.second_screen_layout;
+        return R.layout.screen_second_layout;
     }
 
     @Override

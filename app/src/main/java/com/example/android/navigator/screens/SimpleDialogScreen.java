@@ -27,7 +27,7 @@ public class SimpleDialogScreen extends Screen {
 
     @Override
     public int getLayoutId() {
-        return R.layout.dialog_screen_layout;
+        return R.layout.screen_dialog_layout;
     }
 
     @Override

@@ -40,7 +40,7 @@ public class FirstScreen extends Screen {
     @Override
     public int getLayoutId() {
         // the layout resource for this screen
-        return R.layout.first_screen_layout;
+        return R.layout.screen_first_layout;
     }
 
     @Override
